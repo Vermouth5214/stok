@@ -52,8 +52,8 @@ class BarangController extends Controller
         $data->jenis_mobil = $request->jenis_mobil;
         $data->harga_jual = $request->harga_jual;
         $data->harga_beli = $request->harga_beli;
+        $data->stok_total = $data->stok_total + ($request->stok_awal - $data->stok_awal);
         $data->stok_awal = $request->stok_awal;
-        $data->stok_total = $request->stok_awal;
         $data->keterangan = $request->keterangan;
 		$data->active = $request->active;
 		$data->user_modified = Session::get('userinfo')['user_id'];
